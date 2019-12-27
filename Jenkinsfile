@@ -1,6 +1,12 @@
 #!/bin/groovy
 pipeline{
-    agent any
+    agent {
+        label 'Linux'
+    }
+    options {
+        skipDefaultCheckout true
+        timestamps ()
+    }
     stages {
         stage('Clean Workspace'){
             steps {
